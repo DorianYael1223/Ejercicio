@@ -1,0 +1,39 @@
+@startuml proyecto
+
+actor Usuario as user
+participant Habitacion
+participant HabitacionDoble
+participant HabitacionFamiliar
+participant HabitacionIndividual
+participant HabitacionSuite
+participant PruebaHotel
+
+user -> PruebaHotel: Ejecuta main()
+activate PruebaHotel
+
+PruebaHotel -> HabitacionIndividual: Crea habitacion1
+activate HabitacionIndividual
+PruebaHotel -> HabitacionDoble: Crea habitacion2
+activate HabitacionDoble
+PruebaHotel -> HabitacionFamiliar: Crea habitacion3
+activate HabitacionFamiliar
+PruebaHotel -> HabitacionSuite: Crea habitacion4
+activate HabitacionSuite
+
+user -> PruebaHotel: Elige opción 1
+PruebaHotel -> HabitacionIndividual: Llama mostrarInformacion()
+PruebaHotel -> HabitacionDoble: Llama mostrarInformacion()
+PruebaHotel -> HabitacionFamiliar: Llama mostrarInformacion()
+PruebaHotel -> HabitacionSuite: Llama mostrarInformacion()
+
+user -> PruebaHotel: Elige opción 2
+PruebaHotel -> HabitacionIndividual: Llama mostrarPrecioPorNoche()
+PruebaHotel -> HabitacionDoble: Llama mostrarPrecioPorNoche()
+PruebaHotel -> HabitacionFamiliar: Llama mostrarPrecioPorNoche()
+PruebaHotel -> HabitacionSuite: Llama mostrarPrecioPorNoche()
+
+user -> PruebaHotel: Elige opción 3
+PruebaHotel --> user: Muestra "Saliendo..."
+deactivate PruebaHotel
+
+@enduml

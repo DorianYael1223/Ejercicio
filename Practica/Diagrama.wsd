@@ -1,0 +1,62 @@
+@startuml Habitacion
+
+class Habitacion {
+    - nombre: String
+    - numero: int
+    - precioNoche: double
+
+    + Habitacion(nombre: String, numero: int, precioNoche: double)
+    + getNombre(): String
+    + getNumero(): int
+    + getPrecioNoche(): double
+    + mostrarInformacion(): void
+    + mostrarPrecioPorNoche(): void
+}
+
+class HabitacionDoble {
+    - numDeCamas: int
+
+    + HabitacionDoble(nombre: String, numero: int, precioNoche: double, numDeCamas: int)
+    + getNumeroDeCamas(): int
+    + mostrarInformacion(): void
+    + mostrarPrecioPorNoche(): void
+}
+
+class HabitacionFamiliar {
+    - numeroHabitaciones: int
+
+    + HabitacionFamiliar(nombre: String, numero: int, precioNoche: double, numHabitaciones: int)
+    + getNumeroHabitaciones(): int
+    + mostrarInformacion(): void
+    + mostrarPrecioPorNoche(): void
+}
+
+class HabitacionIndividual {
+    - tieneVistaAlMar: boolean
+
+    + HabitacionIndividual(nombre: String, numero: int, precioNoche: double, tieneVistaAlMar: boolean)
+    + isTieneVistaAlMar(): boolean
+    + mostrarInformacion(): void
+    + mostrarPrecioPorNoche(): void
+}
+
+class HabitacionSuite {
+    - sala: boolean
+
+    + HabitacionSuite(nombre: String, numero: int, precioNoche: double, sala: boolean)
+    + isSala(): boolean
+    + mostrarInformacion(): void
+    + mostrarPrecioPorNoche(): void
+}
+
+class PruebaHotel {
+    + main(args: String[]): void
+}
+
+Habitacion <|-- HabitacionDoble
+Habitacion <|-- HabitacionFamiliar
+Habitacion <|-- HabitacionIndividual
+Habitacion <|-- HabitacionSuite
+PruebaHotel -down-> Habitacion
+
+@enduml

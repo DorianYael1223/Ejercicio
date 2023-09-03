@@ -1,0 +1,15 @@
+@startuml Porycet
+
+actor Usuario as user
+
+rectangle Sistema {
+    usecase "Reservar Habitación" as uc1
+    usecase "Ver Precios por Noche" as uc2
+    usecase "Salir" as uc3
+}
+
+user --> uc1
+user --> uc2
+user --> uc3
+
+@enduml
